@@ -103,13 +103,13 @@ end % end of load-and-processing loop over datasets
 
 MRS_struct = CoReg(MRS_struct, niifile);
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   5. Call segment function
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-MRS_struct = Seg(MRS_struct);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %   5. Call segment function
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% MRS_struct = Seg(MRS_struct);
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   6. Clean up, save data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
