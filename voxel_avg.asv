@@ -1,0 +1,41 @@
+% initialize useful directories
+parent_dir = pwd;     % choose parent directory  
+
+subject_dir ='Subject_folders'; %directory where all subject data are
+
+on_dir ='mpress_on';
+dcm    
+
+%sift through each subject folder to get files
+    for j=1:length(subject_dir)     
+        
+        %create formatted filenames
+        metabfile = {};
+        for ii=1 
+
+         MRS_struct.ii= ii; 
+
+         metabfile {end + 1} = sprintf('mpresson%d.%s', ii, dcm_file_type);
+
+        on_files=fullfile(parent_dir, on_dir);
+
+        end 
+    
+         metabfile {1} = fullfile(on_files, metabfile {1});
+    
+        %create filename for T1w nii file 
+
+        niifile = {};
+        for ii = 1
+
+        niifile {end + 1} = sprintf('MPR1.nii', ii, nii_file_type);
+
+        end 
+
+        niifile {1} = fullfile(parent_dir, MPRAGE_one, niifile {1}); 
+
+        %run through coregister function to get mask data for each subject
+        MRS_struct = CoRegStandAlone(metabfile, niifile);  
+
+    end
+
