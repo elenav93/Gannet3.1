@@ -107,6 +107,7 @@ M_R		= M_R *   [ 1  0  0  0
 % Final rotation matrix
 rotmat = M_R(1:3,1:3);
 
+cd .. %need to go back to Subject_folders directory %EV added 11.30.20
 V = spm_vol(nii_file);
 [T1,XYZ] = spm_read_vols(V);
 
@@ -184,6 +185,11 @@ img_s = flipud(img_s/MRS_struct.mask.(vox{kk}).T1max(ii));
 img_t = img_t + 0.175*flipud(mask_t);
 img_c = img_c + 0.175*flipud(mask_c);
 img_s = img_s + 0.175*flipud(mask_s);
+
+%save info for each image for each subject %EV 11302020
+MRS_struct.img_t = img_t;
+MRS_struct.img_c = img_c;
+MRS_struct.img_s = img_s;
 
 size_max = max([max(size(img_t)) max(size(img_c)) max(size(img_s))]);
 three_plane_img = zeros([size_max 3*size_max]);
