@@ -164,7 +164,7 @@ for ii = 1:numscans
 
         imagesc(squeeze(MRS_struct.mask.(vox{kk}).img{ii}));
         colormap('gray');
-        img = MRS_struct.mask.(vox{kk}).img{ii};
+        img = c;
         img = img(:);
         caxis([0 mean(img(img>0.01)) + 3*std(img(img>0.01))]); % MM (180807)
         axis equal;
